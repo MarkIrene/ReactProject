@@ -1,0 +1,33 @@
+.VehiclesMain {
+  padding: 60px 6%;
+}
+
+.vehiclesTitle {
+  margin-bottom: 40px;
+  font-size: 64px;
+  font-weight: 200;
+  letter-spacing: 0.15rem;
+  color: #151515;
+}
+
+.containerOfCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1000px) {
+  .containerOfCards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .containerOfCards {
+    grid-template-columns: 1fr;
+  }
+
+  .vehiclesTitle {
+    font-size: 42px;
+  }
+}

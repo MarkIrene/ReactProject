@@ -1,0 +1,55 @@
+.hero {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("../../assets/superCar.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 600px;
+  position: relative;
+}
+
+.heroTitle {
+  position: absolute;
+  top: 70px;
+  left: 120px;
+}
+
+.home h1 {
+  color: white;
+  font-weight: 200;
+  letter-spacing: 0.7rem;
+  font-size: 70px;
+}
+
+.home h1 span {
+  display: inline-block;
+
+  opacity: 0;
+  transform: translateY(20px);
+
+  animation: showLetter 0.3s ease forwards;
+}
+
+@keyframes showLetter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home h4 {
+  color: #97c0b8;
+  font-weight: 200;
+  letter-spacing: 0.5rem;
+  text-align: center;
+}
+
+.home p {
+  text-align: center;
+}
