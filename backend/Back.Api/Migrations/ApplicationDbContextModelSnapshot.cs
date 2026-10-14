@@ -53,6 +53,9 @@ namespace Back.Api.Migrations
                     b.Property<bool>("IsAvailable")
                         .HasColumnType("boolean");
 
+                    b.Property<bool>("IsUsed")
+                        .HasColumnType("boolean");
+
                     b.Property<int>("Mileage")
                         .HasColumnType("integer");
 

@@ -17,12 +17,18 @@ public class CarsController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Car>>> GetCars()
+    public async Task<ActionResult<IEnumerable<Car>>> GetCars(
+        [FromQuery] bool? isUsed
+    )
     {
-        //Φέρε όλες τις εγγραφές και κάν' τες List<Car> απτο DB
-        // Το EF(ENTITIY FRAMEWORK) θα εκτελέσει SQL αντίστοιχο περίπου με:
-        // SELECT * FROM "Cars";
-        var cars = await _context.Cars.ToListAsync();
+        var query = _context.Cars.AsQueryable();
+
+        if (isUsed.HasValue)
+        {
+            query = query.Where(car => car.IsUsed == isUsed.Value);
+        }
+
+        var cars = await query.ToListAsync();
 
         return Ok(cars);
     }

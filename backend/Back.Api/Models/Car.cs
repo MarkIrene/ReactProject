@@ -26,5 +26,7 @@ public class Car
 
     public bool IsAvailable { get; set; } = true;
 
+    public bool IsUsed { get; set; } = true;
+
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 }
