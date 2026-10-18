@@ -4,33 +4,48 @@ import CarCard from "../../components/CarCard/CarsCard.jsx";
 
 function Vehicles() {
   const [cars, setCars] = useState([]);
+  const [isUsed, setIsUsed] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5274/api/cars")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to fetch cars");
-        }
-
-        return response.json();
-      })
+    fetch(`http://localhost:5274/api/cars?isUsed=${isUsed}`)
+      .then((response) => response.json())
       .then((data) => {
         setCars(data);
       })
       .catch((error) => {
-        console.error(error);
+        console.error("ERROR:", error);
       });
-  }, []);
-  return (
-    <div className="VehiclesMain">
-      <p className="vehiclesTitle">Our Vehicles</p>
+  }, [isUsed]); //τρέξε το effect όταν φορτώσει το component και κάθε φορά που αλλάζει το isUsed.
 
-      <div className="containerOfCards">
-        {cars.map((car) => (
-          <CarCard key={car.id} car={car} />
-        ))}
+  return (
+    <>
+      <main className="VehiclesTabs">
+        <div className="vehiclesTitle">What are you looking for?</div>
+        <button
+          className={isUsed ? "vehicleTab activeTab" : "vehicleTab"}
+          onClick={() => setIsUsed(true)}
+        >
+          Used Cars
+        </button>
+
+        <button
+          className={!isUsed ? "vehicleTab activeTab" : "vehicleTab"}
+          onClick={() => setIsUsed(false)}
+        >
+          New Cars
+        </button>
+      </main>
+      <div className="ContainerFiltersAndCards">
+        <aside className="filtersContainer">
+          <h2>hello</h2>
+        </aside>
+        <div className="containerOfCards">
+          {cars.map((car) => (
+            <CarCard key={car.id} car={car} />
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

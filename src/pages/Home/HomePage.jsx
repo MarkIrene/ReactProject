@@ -1,7 +1,8 @@
 import "./HomePage.css";
+import { SITE_NAME } from "../../config/siteConfig";
 
 function Home() {
-  const title = "Walker";
+  const title = SITE_NAME;
 
   return (
     <main className="home">
@@ -16,7 +17,7 @@ function Home() {
           </h1>
 
           <h4>Used Cars</h4>
-          <p>Find your next car</p>
+          {/* <p>Find your next car</p> */}
         </div>
       </section>
     </main>

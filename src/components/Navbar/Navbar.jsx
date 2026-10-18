@@ -8,7 +8,7 @@ function Navbar() {
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/" style={{ fontWeight: 50 }}>
-            J|W
+            W|S
             {/* <img
               src={logo}
               alt="Joshua Walker Used Cars"

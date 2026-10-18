@@ -1,4 +1,5 @@
 import "./Footer.css";
+import { SITE_NAME } from "../../config/siteConfig";
 
 function Footer() {
   return (
@@ -41,7 +42,7 @@ function Footer() {
             {/* COMPANY */}
             <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
               <h6 className="text-uppercase title">
-                Walker <br />
+                {SITE_NAME} <br />
                 <div className="subtitle">Used Cars</div>
               </h6>
 
@@ -76,7 +77,7 @@ function Footer() {
 
               <p>
                 <a href="#" className="text-reset">
-                  BMW
+                  Maserati
                 </a>
               </p>
             </div>

@@ -30,7 +30,7 @@ function Login() {
           <small
             id="emailHelp"
             className="form-text text-muted"
-            style={{ fontSize: "10px" }}
+            style={{ fontSize: "12px" }}
           >
             We'll never share your email with anyone else.
           </small>
@@ -57,11 +57,7 @@ function Login() {
             Check me out
           </label>
         </div>
-        <button
-          type="submit"
-          className="btnSignIn"
-          style={{ backgroundColor: "#97c0b8", border: "none" }}
-        >
+        <button type="submit" className="btnSignIn">
           Login
         </button>
       </form>
