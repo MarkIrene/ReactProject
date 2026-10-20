@@ -33,6 +33,54 @@ public class CarsController : ControllerBase
         return Ok(cars);
     }
 
+    [HttpGet("brands")]
+    public async Task<ActionResult<IEnumerable<string>>> GetBrands()
+    {
+        var brands = await _context.Cars
+            .Select(car => car.Brand)
+            .Distinct()
+            .OrderBy(brand => brand)
+            .ToListAsync();
+
+        return Ok(brands);
+    }
+
+    [HttpGet("colors")]
+    public async Task<ActionResult<IEnumerable<string>>> GetColors()
+    {
+        var colors = await _context.Cars
+            .Select(car => car.Color)
+            .Distinct()
+            .OrderBy(color => color)
+            .ToListAsync();
+
+        return Ok(colors);
+    }
+
+    [HttpGet("fuelType")]
+    public async Task<ActionResult<IEnumerable<string>>> GetFuelTypes()
+    {
+        var fuelType = await _context.Cars
+            .Select(car => car.FuelType)
+            .Distinct()
+            .OrderBy(fuelType => fuelType)
+            .ToListAsync();
+
+        return Ok(fuelType);
+    }
+
+    [HttpGet("transmission")]
+    public async Task<ActionResult<IEnumerable<string>>> GetTransmission()
+    {
+        var transmission = await _context.Cars
+            .Select(car => car.Transmission)
+            .Distinct()
+            .OrderBy(transmission => transmission)
+            .ToListAsync();
+
+        return Ok(transmission);
+    }
+
     /* ΣΧΟΛΙΑ:
 
     Task<...> σημαίνει:

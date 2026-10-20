@@ -1,0 +1,277 @@
+.openFiltersButton {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  background-color: #303030;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.filtersSidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 320px;
+  height: 100vh;
+  background-color: #fff;
+  z-index: 1000;
+  padding: 0;
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.12);
+  transform: translateX(-100%);
+  transition: transform 0.35s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.filtersSidebar.open {
+  transform: translateX(0);
+}
+
+/* ── Header ── */
+.filtersHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 24px 18px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.filtersHeader h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  color: #111;
+  letter-spacing: 0.3px;
+}
+
+.closeFiltersButton {
+  border: none;
+  background: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #6b7280;
+  line-height: 1;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+
+.closeFiltersButton:hover {
+  background: #f3f4f6;
+  color: #111;
+}
+
+/* ── Scrollable body ── */
+.filtersContent {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── Section ── */
+.filterSection {
+  padding: 18px 0 4px;
+}
+
+.filterTitles {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin-bottom: 12px;
+}
+
+.filterDivider {
+  height: 1px;
+  background: #f3f4f6;
+  margin: 4px 0;
+}
+
+/* ── Pills (brand, fuel, transmission) ── */
+.pillGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  padding: 6px 14px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 20px;
+  background: #fff;
+  color: #374151;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    border-color 0.15s,
+    background 0.15s,
+    color 0.15s;
+  white-space: nowrap;
+}
+
+.pill:hover {
+  border-color: #303030;
+  /* background: #f9fafb; */
+}
+
+.pill--active {
+  background: #303030;
+  border-color: #303030;
+  color: #fff;
+}
+
+/* ── Price ── */
+.priceInputs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.priceInputWrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f9fafb;
+  transition: border-color 0.15s;
+}
+
+.priceInputWrapper:focus-within {
+  border-color: #303030;
+  background: #fff;
+}
+
+.priceSymbol {
+  padding: 0 8px 0 12px;
+  font-size: 13px;
+  color: #9ca3af;
+  user-select: none;
+}
+
+.priceInputWrapper input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 9px 10px 9px 0;
+  font-size: 13px;
+  color: #111;
+  outline: none;
+  width: 0;
+}
+
+.priceInputWrapper input::placeholder {
+  color: #d1d5db;
+}
+
+.priceSeparator {
+  color: #d1d5db;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+/* ── Color swatches ── */
+.colorSwatchGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.colorSwatch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 10px;
+  border: 1.5px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    border-color 0.15s;
+  text-align: left;
+}
+
+.colorSwatch:hover {
+  background: #f9fafb;
+  border-color: #e5e7eb;
+}
+
+.colorSwatch--active {
+  background: #f3f4f6;
+  border-color: #303030;
+}
+
+.swatchDot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.swatchLabel {
+  font-size: 13px;
+  color: #374151;
+  font-weight: 500;
+}
+
+.colorSwatch--active .swatchLabel {
+  color: #111;
+  font-weight: 600;
+}
+
+.bottomBtns {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+/* ── Apply button ── */
+.applyFiltersBtn {
+  margin-top: 16px;
+  width: 100%;
+  padding: 10px;
+  background: #303030;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: background 0.15s;
+  width: 45%;
+}
+
+.clearFiltersBtn {
+  margin-top: 16px;
+  width: 100%;
+  padding: 10px;
+  background: #8b5a5a;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: background 0.15s;
+  width: 45%;
+}
+
+.applyFiltersBtn:hover {
+  background: #1a1a1a;
+}
+
+.clearFiltersBtn:hover {
+  background: #a95656;
+}

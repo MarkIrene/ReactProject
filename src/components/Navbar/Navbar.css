@@ -1,6 +1,6 @@
-.container-fluid {
-  /* padding: 2px 0; */
-}
+/* .container-fluid {
+
+} */
 
 .container-fluid .navbar-brand {
   font-size: 30px;
@@ -30,7 +30,7 @@
   color: #5e5e5e;
 }
 
-.btnSignIn {
+a.btnSignIn {
   border: 1px solid black;
   background-color: #303030;
   color: white;
@@ -38,4 +38,5 @@
   margin-right: 40px;
   padding: 6px 20px;
   text-decoration: none;
+  margin-top: -2px;
 }
